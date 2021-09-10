@@ -2,18 +2,64 @@
 <html>
 <body>
 
-<h1>The input element</h1>
+<h2>JavaScript if .. else</h2>
 
-<form action="/action_page.php">
-  <label for="fname">First name:</label>
-  <input type="text" id="fname" name="fname"><br><br>
-  <label for="lname">Last name:</label>
-  <input type="text" id="lname" name="lname"><br><br>
-  <input type="submit" value="Submit">
-</form>
+<p>A time-based greeting:</p>
+<input type="text" id="fname" name="fname"><br><br>
+<button onclick="myFunction()">Click me</button>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
 
-<p>Click the "Submit" button and the form-data will be sent to a page on the 
-server called "action_page.php".</p>
+<script>
+
+
+function myFunction() {
+
+const hour = document.getElementById("fname").value
+let greeting;
+let greeting1;
+let greeting2;
+let greeting3;
+let greeting4;
+
+if (hour >= 0) {
+const kanal = hour/5440;
+const marla = (kanal % 1) * 20;
+const sqft = (marla % 1) * 272.251;
+
+greeting =  "KANAL  "+ Math.trunc(kanal) + "   MARLA  "+ Math.trunc(marla) + "   FOOT  "+ Math.trunc(sqft) ;
+
+greeting1 =  "KANAL  "+ Math.trunc(kanal) ;
+
+
+greeting2 =  "   MARLA  "+ Math.trunc(marla);
+
+
+greeting3 = "   FOOT  "+ Math.trunc(sqft) ;  
+  
+
+
+
+greeting4 =  Math.trunc(kanal) + "-"+ Math.trunc(marla) + "-"+ Math.trunc(sqft) ;
+
+
+greeting5 =  "KANAL  "+ Math.trunc(kanal) + "   MARLA  "+ Math.trunc(marla) + "   FOOT  "+ Math.trunc(sqft) ;
+} 
+
+
+document.getElementById("demo").innerHTML = greeting;
+document.getElementById("demo1").innerHTML = greeting1;
+document.getElementById("demo2").innerHTML = greeting2;
+document.getElementById("demo3").innerHTML = greeting3;
+document.getElementById("demo4").innerHTML = greeting4;
+
+
+
+}
+</script>
 
 </body>
 </html>
